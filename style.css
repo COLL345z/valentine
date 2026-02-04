@@ -1,38 +1,27 @@
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #cfefff, #eaf7ff);
-  text-align: center;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
 }
 
-.top-bar {
-  background: #4da3ff;
-  color: white;
-  padding: 15px;
-  font-size: 20px;
-}
-
-.subtitle {
-  font-size: 12px;
-  opacity: 0.9;
-}
-
-.content {
-  margin: 50px auto;
-}
-
-.card {
+.container, .card {
   background: white;
-  width: 85%;
+  width: 90%;
   max-width: 350px;
-  margin: auto;
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: center;
 }
 
 h2 {
   color: #4da3ff;
+  margin-top: 0;
 }
 
 .buttons {
@@ -57,14 +46,14 @@ button {
   background: #d6efff;
 }
 
-.small {
-  font-size: 13px;
+.subtitle, .hint, .small {
+  font-size: 12px;
   color: #555;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 footer {
-  margin-top: 60px;
+  margin-top: 30px;
   font-size: 12px;
   color: #555;
 }
