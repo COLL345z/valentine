@@ -11,57 +11,25 @@ html, body {
   overflow-x: hidden;
 }
 
-/* slightly bigger text for mobile */
-/* Wrapper fills screen and centers content */
+/* Wrapper fills screen */
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;      /* full width on phone */
-  min-height: 100vh; /* take full screen height */
+  width: 100%;
+  min-height: 100vh;
   padding: 10px;
   box-sizing: border-box;
 }
-
-/* Card fills almost the screen on mobile */
-.card {
-  background: white;
-  width: 95%;        /* nearly full width */
-  max-width: 500px;  /* cap for bigger screens */
-  padding: 25px;     
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  text-align: center;
-  font-size: 18px;   /* slightly bigger text */
-}
-
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 25px;
-}
-
-button {
-  flex: 1 1 45%;     /* take almost half width, grow if needed */
-  min-width: 120px;  /* ensures tap-friendly on small screens */
-  padding: 16px 20px;
-  font-size: 18px;
-  margin: 8px 5px;
-  border-radius: 10px;
-}
-
-
 
 /* Header */
 .top-bar {
   text-align: center;
   background: #4da3ff;
   color: white;
-  padding: 12px 15px;
-  border-radius: 12px;
+  padding: 15px;
+  border-radius: 15px;
   margin-bottom: 20px;
 }
 
@@ -71,30 +39,35 @@ button {
   margin-top: 5px;
 }
 
-
-
-h2 {
-  color: #4da3ff;
-  margin-top: 0;
+/* Card */
+.card {
+  background: white;
+  width: 95%;
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: center;
+  font-size: 18px;
 }
 
 /* Buttons */
 .buttons {
-  margin-top: 20px;
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px;
 }
 
 button {
-  padding: 12px 20px;
-  font-size: 16px;
+  flex: 1 1 45%;
+  min-width: 120px;
+  padding: 16px 20px;
+  font-size: 18px;
+  margin: 8px 5px;
+  border-radius: 10px;
   border: none;
-  border-radius: 8px;
-  margin: 8px;
   cursor: pointer;
-  flex: 1 1 40%;
-  min-width: 100px;
 }
 
 #yesBtn {
@@ -143,19 +116,19 @@ footer {
   left: 10px;
   top: 0;
 }
+
+/* Mobile tweaks */
 @media screen and (max-width: 400px) {
   h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
-  .subtitle {
-    font-size: 11px;
+  .subtitle, footer {
+    font-size: 12px;
   }
 
-  footer {
-    font-size: 11px;
+  button {
+    font-size: 16px;
+    padding: 14px 18px;
   }
 }
-
-
-
