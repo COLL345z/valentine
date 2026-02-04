@@ -3,7 +3,7 @@ const noBtn = document.getElementById("noBtn");
 const music = document.getElementById("bgMusic");
 const heartsContainer = document.getElementById("hearts-container");
 
-// Start music on first tap (mobile rule)
+// Start music on first tap (mobile restriction)
 document.addEventListener("click", () => {
   if (music.paused) music.play();
 }, { once: true });
@@ -13,7 +13,7 @@ yesBtn.addEventListener("click", () => {
   window.location.href = "yes.html";
 });
 
-// No button evades the cursor
+// No button evades cursor
 noBtn.addEventListener("mouseover", () => {
   const x = Math.random() * (window.innerWidth - 100);
   const y = Math.random() * (window.innerHeight - 50);
