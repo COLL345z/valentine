@@ -7,7 +7,26 @@ html, body {
   display: flex;
   justify-content: center; /* horizontal center */
   align-items: center;     /* vertical center */
+  min-height: 100vh;
 }
+.card {
+  background: white;
+  width: 100%;  /* fill wrapper width */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center inside wrapper */
+  align-items: center;     /* horizontal center inside wrapper */
+  width: 90%;
+  max-width: 350px;
+}
+
 
 .container, .card {
   background: white;
@@ -57,3 +76,4 @@ footer {
   font-size: 12px;
   color: #555;
 }
+
