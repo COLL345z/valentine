@@ -16,9 +16,29 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  max-width: 350px;
+  width: 95%;          /* almost full width on small phones */
+  max-width: 450px;    /* still limits on big screens */
+  padding: 10px;       /* small padding around edges */
 }
+
+.card {
+  background: white;
+  width: 100%;          /* fill wrapper width */
+  padding: 20px;        /* smaller padding so it looks bigger inside */
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: center;
+  font-size: 16px;      /* slightly bigger text for mobile */
+}
+
+/* Optional: make buttons bigger on small screens */
+button {
+  padding: 14px 22px;
+  font-size: 18px;
+  flex: 1 1 40%;
+  min-width: 120px;
+}
+
 
 /* Header */
 .top-bar {
@@ -36,15 +56,7 @@ html, body {
   margin-top: 5px;
 }
 
-/* Card */
-.card {
-  background: white;
-  width: 100%;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  text-align: center;
-}
+
 
 h2 {
   color: #4da3ff;
@@ -116,3 +128,18 @@ footer {
   left: 10px;
   top: 0;
 }
+@media screen and (max-width: 400px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+  }
+
+  footer {
+    font-size: 11px;
+  }
+}
+
+
