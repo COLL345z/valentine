@@ -11,33 +11,48 @@ html, body {
   overflow-x: hidden;
 }
 
+/* slightly bigger text for mobile */
+/* Wrapper fills screen and centers content */
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 95%;          /* almost full width on small phones */
-  max-width: 450px;    /* still limits on big screens */
-  padding: 10px;       /* small padding around edges */
+  width: 100%;      /* full width on phone */
+  min-height: 100vh; /* take full screen height */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
+/* Card fills almost the screen on mobile */
 .card {
   background: white;
-  width: 100%;          /* fill wrapper width */
-  padding: 20px;        /* smaller padding so it looks bigger inside */
-  border-radius: 18px;
+  width: 95%;        /* nearly full width */
+  max-width: 500px;  /* cap for bigger screens */
+  padding: 25px;     
+  border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   text-align: center;
-  font-size: 16px;      /* slightly bigger text for mobile */
+  font-size: 18px;   /* slightly bigger text */
 }
 
-/* Optional: make buttons bigger on small screens */
-button {
-  padding: 14px 22px;
-  font-size: 18px;
-  flex: 1 1 40%;
-  min-width: 120px;
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px;
 }
+
+button {
+  flex: 1 1 45%;     /* take almost half width, grow if needed */
+  min-width: 120px;  /* ensures tap-friendly on small screens */
+  padding: 16px 20px;
+  font-size: 18px;
+  margin: 8px 5px;
+  border-radius: 10px;
+}
+
 
 
 /* Header */
@@ -141,5 +156,6 @@ footer {
     font-size: 11px;
   }
 }
+
 
 
