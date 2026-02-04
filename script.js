@@ -1,42 +1,52 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const music = document.getElementById("bgMusic");
+const heartsContainer = document.getElementById("hearts-container");
 
-// Fade-in function
-function fadeInAudio(audio, duration = 2000) {
-  audio.volume = 0;
-  const step = 0.05;
-  const intervalTime = duration * step;
-  const fade = setInterval(() => {
-    if (audio.volume < 1) {
-      audio.volume = Math.min(audio.volume + step, 1);
-    } else {
-      clearInterval(fade);
-    }
-  }, intervalTime);
-}
+// Start music on first tap (mobile rule)
+document.addEventListener("click", () => {
+  if (music.paused) music.play();
+}, { once: true });
 
-// Yes button click → play music then navigate
+// Yes button → second page
 yesBtn.addEventListener("click", () => {
-  music.play().then(() => {
-    fadeInAudio(music);
-
-    // Delay navigation just enough for audio to start
-    setTimeout(() => {
-      window.location.href = "yes.html";
-    }, 400); // 0.4 seconds
-  }).catch(() => {
-    // If somehow blocked, still navigate
-    window.location.href = "yes.html";
-  });
+  window.location.href = "yes.html";
 });
 
-// No button hover movement
+// No button evades the cursor
 noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
 
   noBtn.style.position = "absolute";
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
 });
+
+// Floating hearts effect
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.top = window.innerHeight + "px";
+  heartsContainer.appendChild(heart);
+
+  let speed = 1 + Math.random() * 2;
+  let scale = 0.5 + Math.random() * 0.5;
+  heart.style.transform += ` scale(${scale})`;
+
+  function animate() {
+    let top = parseFloat(heart.style.top);
+    if (top < -30) {
+      heart.remove();
+    } else {
+      heart.style.top = top - speed + "px";
+      requestAnimationFrame(animate);
+    }
+  }
+  animate();
+}
+
+// Generate hearts periodically
+setInterval(createHeart, 500);
