@@ -1,3 +1,4 @@
+/* Base setup */
 html, body {
   height: 100%;
   margin: 0;
@@ -5,35 +6,42 @@ html, body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #cfefff, #eaf7ff);
   display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
-  min-height: 100vh;
-}
-.card {
-  background: white;
-  width: 100%;  /* fill wrapper width */
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical center inside wrapper */
-  align-items: center;     /* horizontal center inside wrapper */
+  justify-content: center;
+  align-items: center;
   width: 90%;
   max-width: 350px;
 }
 
+/* Header */
+.top-bar {
+  text-align: center;
+  background: #4da3ff;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
 
-.container, .card {
+.subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+/* Card */
+.card {
   background: white;
-  width: 90%;
-  max-width: 350px;
+  width: 100%;
   padding: 25px;
-  border-radius: 15px;
+  border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   text-align: center;
 }
@@ -43,17 +51,23 @@ h2 {
   margin-top: 0;
 }
 
+/* Buttons */
 .buttons {
-  margin-top: 25px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 button {
-  padding: 12px 24px;
+  padding: 12px 20px;
   font-size: 16px;
   border: none;
   border-radius: 8px;
-  margin: 10px;
+  margin: 8px;
   cursor: pointer;
+  flex: 1 1 40%;
+  min-width: 100px;
 }
 
 #yesBtn {
@@ -65,15 +79,40 @@ button {
   background: #d6efff;
 }
 
-.subtitle, .hint, .small {
-  font-size: 12px;
-  color: #555;
-  margin-top: 10px;
-}
-
+/* Footer */
 footer {
-  margin-top: 30px;
+  margin-top: 25px;
   font-size: 12px;
   color: #555;
 }
 
+/* Floating hearts */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #4da3ff;
+  transform: rotate(45deg);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #4da3ff;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: 10px;
+  top: 0;
+}
