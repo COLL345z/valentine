@@ -30,10 +30,10 @@ html, body {
   padding: 18px;          /* bigger padding for mobile */
   border-radius: 15px;
   margin-bottom: 25px;
-  font-size: 22px;        /* bigger font */
+  font-size: 30px;        /* bigger font */
 }
 .subtitle {
-  font-size: 16px;        /* bigger for readability */
+  font-size: 25px;        /* bigger for readability */
   opacity: 0.9;
   margin-top: 5px;
 }
@@ -47,15 +47,15 @@ html, body {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   text-align: center;
-  font-size: 18px;
+  font-size: 30px;
 }
 .card h2 {
-  font-size: 26px;        /* main title bigger */
+  font-size: 30px;        /* main title bigger */
   margin-top: 0;
 }
 
 .card p {
-  font-size: 18px;        /* main text bigger */
+  font-size: 30px;        /* main text bigger */
   line-height: 1.5;
 }
 
@@ -68,7 +68,7 @@ button {
   flex: 1 1 45%;
   min-width: 120px;
   padding: 18px 22px;     /* bigger buttons */
-  font-size: 20px;        /* easier to tap */
+  font-size: 25px;        /* easier to tap */
   margin: 8px 5px;
   border-radius: 10px;
 }
@@ -124,18 +124,19 @@ footer {
 }
 
 /* Mobile tweaks */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   h2 {
-    font-size: 22px;
+    font-size: 32px;
   }
 
   .subtitle, footer {
-    font-size: 12px;
+    font-size: 20px;
   }
 
   button {
-    font-size: 16px;
+    font-size: 25px;
     padding: 14px 18px;
   }
 }
+
 
